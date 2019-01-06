@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Css3</title>
+    <link rel = "stylesheet" href = "css/masterCss.css">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch"
+    rel="stylesheet">
+  </head>
+  <body>
+
+  <!--HOME SITO UFFICIALE-->
+  <section class="content navbar">
+  <nav class= "navbar" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+    <a href ="index2.html"><font color="000000">Home</font><br/></a>
+    <a class = "ext" href ="https://www.w3.org/Style/CSS/Overview.en.html"><font color="000000">Sito Ufficiale</font><br/></a>
+  </nav>
+</section>
+
+<section class ="content sfondo">
+ <ul class="list-linguaggi" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+   <li>
+       <img src="images/cssgrande.jpg" align="middle">
+	   <br></br>
+        Il CSS (acronimo di Cascading Style Sheets, in italiano fogli di stile a cascata),
+        in informatica, è un linguaggio usato per definire la formattazione di documenti HTML, 
+        XHTML e XML ad esempio i siti web e relative pagine web. Le regole per comporre il CSS
+        sono contenute in un insieme di direttive (Recommendations) emanate a partire dal 1996 dal W3C
+        <br/>
+      </p>
+   </li>
+  </ul>
+</section>
+<!------------------------------------------------>
+
+<!--LEZIONI-->
+<section class="content paragrafo">
+  <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)">LEZIONI</p>
+  <font color="000000"></font><br/>
+  </nav>
+</section>
+
+<section class ="content sfondo">
+ <ul class="list-linguaggi" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+   <li>
+        <a href ="Css1/lez1.html">Lezione 1</font><br/></a>
+        <a href ="Css1/lez2.html">Lezione 2</font><br/></a>
+        <a href ="Css1/lez3.html">Lezione 3</font><br/></a>
+      </p>
+   </li>
+  </ul>
+</section>
+<section class="content test">
+  <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)">Inizia dei brevi Test</p>
+
+
+<input type="button" onClick="location.href='quizcss1.html'" value = "Inizia il Test">
+</section>
+<script src="js/ScrollTrigger.min.js"></script>
+   <script>
+   window.counter = function() {
+     var span = this.querySelector('span');
+     var current = parseInt(span.textContent);
+
+     span.textContent = current + 1;
+
+   };
+
+   document.addEventListener ('DOMContentLoaded', function(){
+     var trigger = new ScrollTrigger({
+       addHeight : true
+     });
+
+   });
+   </script>
+<!---------------------------------------------------------->
+  </body>
+
+</html>

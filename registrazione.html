@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <script>
+        function cancella(){
+            document.modulo.reset();
+        }
+        function inizializzaStorageUtenti(){
+             if (typeof(localStorage.utenti) == "undefined") {
+                 localStorage.utenti="[]";
+            }
+        }
+        function resetStorageUtenti(){
+            localStorage.utenti="[]";
+        }
+
+        function uguali(u,o){
+            if ((u.user==o.user)&&(u.pass==o.pass)) {
+                return true; }
+            return false;
+             }
+        function store () {
+            if (document.modulo.cognome.value=="") {
+                alert("Inserire cognome");
+                return false; }
+            if (document.modulo.nome.value=="") {
+                 alert("Inserire nome");
+                 return false; }
+            if (document.modulo.età.value=="") {
+                alert("Inserire eta");
+                return false; }
+            var e=parseInt(document.modulo.età.value);
+            if (isNaN(e)) {
+                alert("L'età deve essere un numero");
+                return false;
+            }
+            if (document.modulo.uname.value=="") {
+                alert("Inserire username");
+                return false; }
+            if (document.modulo.psw.value=="") {
+                alert("Inserire password");
+                return false; }
+            var u = JSON.parse(localStorage.utenti);
+            var nextpos = u.length;
+            var o = { user:document.modulo.uname.value, pass:document.modulo.psw.value,point:0,num:0};
+            for (i=0;i<nextpos;i++) {
+                if(uguali(u[i],o)) {
+                alert("Utente gia inserito");
+                return false;
+                 }
+            }
+            alert("Dati inseriti correttamente");
+            u[nextpos] = o;
+            localStorage.utenti = JSON.stringify(u);
+            return true;
+        }
+        function pulisci(){
+            localStorage.clear();
+            alert("pulito");
+        }
+    </script>
+    <title>Registrazione</title>
+    <link rel = "stylesheet" href = "css/masterlogin.css">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch"
+    rel="stylesheet">
+  </head>
+  <body>
+    <header class= "header">
+      <h1>
+        <img src = "images/LOGO.png" alt ="Welcome to Playcode">
+      </h1>
+    </header>
+    <section class= "content scritta">
+      <p>Registrazione</p>
+    </section>
+
+</head>
+<body style="background-image: url(d1.png)" onload="inizializzaStorageUtenti()">
+
+        <form action="" name="modulo" method="post" accept-charset="utf-8">
+
+
+
+                         <div>
+                            <label><b>Nome :</b></label>
+                            <input type="text" placeholder="Inserisci Nome" name="nome" required>
+                        </div>
+
+                      <div>
+                            <label><b>Cognome :</b></label>
+                           <input type="text" placeholder="Inserisci Cognome" name="cognome" required>
+                      </div>
+
+
+                       <div>
+                            <label><b>Eta :</b></label>
+                           <input type="text" placeholder="Inserisci Eta" name="età" required>
+                       </div>
+
+                      <div>
+                      <label><b>Username :</b></label>
+                     <input type="text" id="username" placeholder="Inserisci Username" name="uname" required>
+                     </div>
+                      <div>
+                      <label><b>   Password :</b></label>
+                      <input type="password" id="password" placeholder="Inserisci Password" name="psw" required>
+
+                     <button type="button " onclick="store()">Registrati</button>
+
+                    </div>
+                    <div>
+                    <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" class="cancelbtn" name="cnl" onclick="cancella();">Cancel</button>
+                       <input type="button" value="Reset Storage" id="resbtn"onclick="resetStorageUtenti();">
+                      <button type="button" class="accedi" onclick=location.href="accesso.html">Accedi</button>
+
+                    </div>
+                    </div>
+
+
+
+
+    </form>
+
+</body>
+</html>

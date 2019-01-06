@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Progetto</title>
+    <link rel = "stylesheet" href = "css/master.css">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch"
+    rel="stylesheet">
+  </head>
+  <body>
+
+    <!--Header-->
+    <header class= "header">
+      <h1>
+        <img src = "images/LOGO.png" alt ="Welcome to Playcode">
+      </h1>
+    </header>
+
+    <!--Navigation-->
+    <nav class= "navbar"  data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+      <a href ="#Welcome">Welcome</a>
+      <a href ="#Linguaggi">Linguaggi</a>
+      <a href ="#About">About</a>
+ 	<a href ="http://192.168.56.1:80">Contact</a>
+
+        <form action="login">
+      <input type="text" name="uname">
+
+            <input type="text" name="psw">
+
+                  <input type="submit" value ="login">
+
+
+      </form>
+    </nav>
+
+
+    <!--Welcome-->
+
+
+    <!--Linguaggi-->
+    <section class ="content linguaggi" id="Linguaggi">
+      <h2 class="title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">Linguaggi</h2>
+      <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)">bllblblblblblblblblblblablabalbalablabalbalb</p>
+      <ul class="list-linguaggi" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <li>
+          <figure>
+            <a href="indexscala.html">
+            <img src="images/logoscala.png" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Scala</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="indexasm.html">
+            <img src="images/logosql.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>MySql</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="indexc.html">
+            <img src="images/logoc.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>C</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <a href="indexcss3.html">
+            <img src="images/logocss.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>CSS3</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <a href="indexhtml.html">
+            <img src="images/logohtml.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Html</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="indexjava.html">
+            <img src="images/logojava.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Java</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <ul class="list-linguaggi" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+
+        <li>
+          <figure>
+            <a href="indexjs.html">
+            <img src="images/logojs.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Javascript</figcaption>
+          </figure>
+        </li>
+
+
+        <li>
+          <figure>
+            <a href="indexphp.html">
+            <img src="images/logophp.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Php</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="indexpy.html">
+            <img src="images/logopy.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Python</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="indexruby.html">
+            <img src="images/logoruby.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Ruby</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="indexswift.html">
+            <img src="images/logoswift.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Swift</figcaption>
+          </figure>
+
+        </li>
+      </ul>
+
+
+
+
+     </section>
+     <section class="content who" id="Welcome">
+       <h2 class="title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">Welcome</h2>
+         <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)">  blablabalablabalbalablabalablbalablabalbalablabalbalablabalbalablab
+           blabalablablabalablablablabalbalbalbalbalbalbalablablablablablablaa
+           balbalablablabalba</p>
+         <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)"> blablabalbalablablablabalbalablabalbalablablabla
+           blablabalablabalbalablabalablbalablabalbalablabalbalablabalbalablab
+             blabalablablabalablablablabalbalbalbalbalbalbalablablablablablablaa
+             balbalablablabalba</p>
+
+
+
+     </section>
+
+
+
+    <!--About-->
+
+
+
+   <script src="js/ScrollTrigger.min.js"></script>
+   <script>
+   window.counter = function() {
+     var span = this.querySelector('span');
+     var current = parseInt(span.textContent);
+
+     span.textContent = current + 1;
+
+   };
+
+   document.addEventListener ('DOMContentLoaded', function(){
+     var trigger = new ScrollTrigger({
+       addHeight : true
+     });
+
+   });
+   </script>
+
+
+
+
+  </body>
+</html>

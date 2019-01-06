@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset= "utf-8"/>
+  <link rel = "stylesheet" href = "css/masterquiz.css">
+  <link href="https://fonts.googleapis.com/css?family=Chakra+Petch"
+  rel="stylesheet">
+
+<style type='text/css'>
+#countdown { border:1px solid black;
+background:#eee;
+font-weight:bold;
+font-size:20px;
+width:120px;
+text-align:center;
+margin-top:30px;
+height:24px;
+}
+
+button { width:120px;
+}
+</style>
+
+
+
+<script type='text/javascript'>
+
+function countdown( tempo ) {
+var div = document.getElementById('countdown');
+var tmp = tempo.split(":");
+
+var oggi = new Date();
+oggi.setHours(tmp[0]);
+oggi.setMinutes(tmp[1]);
+oggi.setSeconds(tmp[2]);
+
+var hour = oggi.getHours();
+var minu = oggi.getMinutes();
+var seco = oggi.getSeconds();
+
+div.innerHTML = (hour < 10 ? "0" : "") + hour +":"+ (minu < 10 ? "0" : "") + minu +":"+ (seco < 10 ? "0" : "") + seco;
+
+if ( oggi.getHours() == 0 && oggi.getMinutes() == 0 && oggi.getSeconds() == 0 ) {
+alert("Contdown terminato!");
+} else {
+oggi.setTime( oggi.getTime() - 1000 );
+var newt = oggi.getHours() +":"+ oggi.getMinutes() +":"+ oggi.getSeconds();
+setTimeout(function() { countdown(newt); }, 1000);
+}
+}
+
+
+// Prelevato su http://www.web-link.it
+
+var ans = new Array;
+var done = new Array;
+var stat = new Array;
+var score = 0;
+var count = 0;
+
+ans[1] = "a";
+ans[2] = "b";
+ans[3] = "c";
+ans[4] = "d";
+ans[5] = "a";
+ans[6] = "b";
+ans[7] = "c";
+ans[8] = "d";
+ans[9] = "a";
+ans[10] = "b";
+
+function Engine( question, answer ) {
+if ( answer != ans[ question ] ) {
+if ( ! done[ question ] ) {
+done[ question ] = -1;
+stat[ question ] = false;
+count++;
+} else {
+alert( "Hai gia risposto a questa domanda!" );
+}
+} else {
+if ( ! done[ question ] ) {
+done[ question ] = -1;
+score++;
+stat[ question ] = true;
+count++;
+} else {
+alert( "Hai gia risposto a questa domanda!" );
+}
+}
+
+if ( count == ans.length ) { NextLevel() }
+}
+
+function NextLevel () {
+
+var fine = new Date();
+var differenza = ( fine.getTime() - window.inizio.getTime()) / 1000;
+var mm = parseInt ( differenza / 60 );
+var hh = parseInt ( mm / 60 );
+
+var htm = "Hai completato il quiz in " + hh + " ore, " + ( mm - ( hh * 60 ) ) + " minuti e " + ( differenza - ( mm * 60 ) ) + " secondi." +
+"<br>" + "Il tuo punteggio &egrave; di " + score + " su " + (ans.length-1) + ":" +
+"<br><br>";
+
+for ( var j = 1; j < stat.length; j++ ) {
+htm += "Risposta " + j + ": <span style='color:" + ( stat[ j ] ? "green'>esatta" : "red'>errata" ) + "</span><br>";
+}
+
+document.getElementById( 'risultato' ).innerHTML = htm;
+}
+
+// -->
+</script></head>
+<body >
+<input type=button onClick="window.inizio= new Date(); countdown('0:2:3');"value="inizio">
+    <ul>
+        <li>
+        <form>
+<p>I programma Mysql che gestisce tutti i dati è ?</p>
+<input type=radio value="a" name="1" onClick="Engine(1, this.value)">mysqld<br>
+<input type=radio value="b" name="1" onClick="Engine(1, this.value)">mysql<br>
+<input type=radio value="c" name="1" onClick="Engine(1, this.value)">mysql exe<br>
+<input type=radio value="d" name="1" onClick="Engine(1, this.value)">httpd<p>
+
+<p>Può un trigger essere chiamato da un'altra applicazione ?</p>
+<input type=radio value="a" name="2" onClick="Engine(2, this.value)">Si<br>
+<input type=radio value="b" name="2" onClick="Engine(2, this.value)">No<br>
+<input type=radio value="c" name="2" onClick="Engine(2, this.value)">Si, in una particolare situazione<br>
+
+<p>Una tabella può essere unita a se stessa?</p>
+<input type=radio value="a" name="3" onClick="Engine(3, this.value)">Si<br>
+<input type=radio value="b" name="3" onClick="Engine(3, this.value)">No<br>
+<input type=radio value="c" name="3" onClick="Engine(3, this.value)">Si, in una particolare situazione<br>
+
+
+
+<p>Quale tra le seguenti proposizioni viene usata per limitare il numero di righe di una query ?</p>
+<input type=radio value="a" name="4" onClick="Engine(4, this.value)">Limit<br>
+<input type=radio value="b" name="4" onClick="Engine(4, this.value)">From<br>
+<input type=radio value="c" name="4" onClick="Engine(4, this.value)">Having<br>
+<input type=radio value="d" name="4" onClick="Engine(4, this.value)">And<p>
+
+<p>MYsql è un ?</p>
+<input type=radio value="a" name="5" onClick="Engine(5, this.value)">DBMS<br>
+<input type=radio value="b" name="5" onClick="Engine(5, this.value)">RDBMS<br>
+<input type=radio value="c" name="5" onClick="Engine(5, this.value)">Entrambi<br>
+
+</li>
+</ul>
+
+
+
+
+
+
+<input type=button onClick="NextLevel()" value="Risultato">
+
+
+<input type=button onClick="randomizza1()" value="Prossimo">
+
+<input type="button" onClick="location.href='index2.html'" value = "Torna alla home">
+
+ <div id="risultato"></div>
+
+
+
+</body>
+<script type="text/javascript">
+
+function randomizza1(){
+
+  var acceptedWebsites =["quizmysql1.html", "quizmysql3.html"]
+
+	if ( acceptedWebsites.indexOf(document.location.href) == -1 ) {
+	    var url = acceptedWebsites[Math.floor(Math.random()*acceptedWebsites.length)];
+	    document.location.href = url;
+	}
+
+
+}
+</script>
+
+</html>

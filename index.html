@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Progetto</title>
+    <link rel = "stylesheet" href = "css/master.css">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch"
+    rel="stylesheet">
+  </head>
+  <body>
+
+    <!--Header-->
+    <header class= "header">
+      <h1>
+        <img src = "images/LOGO.png" alt ="Welcome to Playcode">
+      </h1>
+    </header>
+
+    <!--Navigation-->
+    <nav class= "navbar"  data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+      <a href ="#About">Welcome</a>
+      <a href ="#Linguaggi">Linguaggi</a>
+      <a href ="#Welcome">About</a>
+		<a href ="http://192.168.43.11:80">Contact</a>
+    <a href ="accesso.html">Login</a>
+
+    </nav>
+
+
+    <!--Welcome-->
+    <section class ="content about" id="About">
+      <article class="contain">
+       <h2 class ="title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">Welcome</h2>
+       <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)">BENVENUTI SU PLAYCODE</p>
+       <a href="registrazione.html" class="btn" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">Registrati</a>
+     </article>
+
+    </section>
+
+
+    <!--Linguaggi-->
+    <section class ="content linguaggi" id="Linguaggi">
+      <h2 class="title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">Linguaggi</h2>
+      <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)">Questi sono i linguaggi maggiormente usati per la programmazione software, web ed altro..</p>
+      <ul class="list-linguaggi" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+        <li>
+          <figure>
+            
+            <img src="images/logoscala.png" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Scala</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/logosql.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>MySql</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/logoc.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>C</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="images/logocss.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>CSS3</figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure>
+            <img src="images/logohtml.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Html</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/logojava.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Java</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <ul class="list-linguaggi" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+
+        <li>
+          <figure>
+            <img src="images/logojs.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Javascript</figcaption>
+          </figure>
+        </li>
+
+
+        <li>
+          <figure>
+            <img src="images/logophp.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Php</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/logopy.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Python</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/logoruby.jpg" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Ruby</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/logoperl.png" alt="NOOOOOOOME">
+          </a>
+            <figcaption>Perl</figcaption>
+          </figure>
+
+        </li>
+      </ul>
+
+
+
+
+     </section>
+     <section class="content who" id="Welcome">
+       <h2 class="title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">About</h2>
+         <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)">  
+			Progetto realizzato da due studenti di Ingegneria informatica per il corso di linguaggi e tecnologie per il web</p>
+         <p data-scroll="toggle(.fromBottomIn, .fromBottomOut)"> Lorenzo Guidi 1710027 guidi.1710027@studenti.uniroma1.it Giuseppe Costantino 1677800 costantino.1677800@studenti.uniroma1.it</p>
+
+
+
+     </section>
+
+
+
+    <!--About-->
+
+
+
+
+
+   <script src="js/ScrollTrigger.min.js"></script>
+   <script>
+   window.counter = function() {
+     var span = this.querySelector('span');
+     var current = parseInt(span.textContent);
+
+     span.textContent = current + 1;
+
+   };
+
+   document.addEventListener ('DOMContentLoaded', function(){
+     var trigger = new ScrollTrigger({
+       addHeight : true
+     });
+
+   });
+   </script>
+
+
+
+  </body>
+</html>
